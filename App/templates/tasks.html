@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Tasks - To-Do List App{% endblock %}
+{% block content %}
+    <div class="tasks-container">
+        <h1>Tasks</h1>
+        <form method="post" action="{{ url_for('task.add_task') }}">
+            <label for="title">New Task:</label>
+            <input type="text" id="title" name="title" required>
+            <button type="submit">Add Task</button>
+        </form>
+    {% if tasks %}
+    <form method="post" action="{{ url_for('task.clear_tasks') }}">
+        <button class="clr-tsk-btn" type="submit">Clear Tasks</button>
+    </form>
+    {% endif %}
+    </div>
+    <br><br>
+    <div class="task-view-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- Tasks will be populated here -->
+                {% for task in tasks %}
+                <tr>
+                    <td>{{ task.id }}</td>
+                    <td>{{ task.title }}</td>
+                    <td><span>{{ task.status }}</span></td>
+                    <td>
+                        <form method="post" action="{{ url_for('task.toggle_status', task_id=task.id) }}">
+                        <button type="submit">Toggle Status</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="{{ url_for('task.delete_task', task_id=task.id) }}">
+                        <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

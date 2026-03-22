@@ -1,0 +1,260 @@
+/* =========================
+   GLOBAL BASE
+   ========================= */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* =========================
+   LOGIN PAGE
+   ========================= */
+
+.login-container {
+    width: 300px;
+    margin: 15% auto;
+    padding: 20px;
+
+    background-color: #1e1e1e;
+    border: 1px solid #d32f2f;
+    border-radius: 6px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+
+    background-color: #2a2a2a;
+    color: #ffffff;
+
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+
+    background: linear-gradient(90deg, #b71c1c, #d32f2f);
+    color: #ffffff;
+
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #ff5252;
+    color: #000000;
+}
+
+/* =========================
+   HEADER & FOOTER
+   ========================= */
+
+.head,
+.foot {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+
+    color: #ffffff;
+    background: linear-gradient(90deg, #000000, #b71c1c);
+}
+
+.foot {
+    position: fixed;
+    bottom: 0;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+    display: flex;
+    padding: 6px;
+    background: linear-gradient(90deg, #000000, #b71c1c);
+}
+
+/* Common style for ALL navbar buttons */
+.nav-btn,
+.nav-btn-mode {
+    margin: 2px;
+    padding: 10px 14px;
+
+    background: transparent;
+    color: #ffffff;
+
+    border: 1px solid #d32f2f;
+    border-radius: 4px;
+
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.nav-btn:hover,
+.nav-btn-mode:hover {
+    background-color: #d32f2f;
+    color: #000000;
+    border-color: #ff5252;
+}
+
+/* Active / toggle state (important for mode buttons) */
+.nav-btn-mode.active {
+    background-color: #ff5252;
+    color: #000000;
+    border-color: #ff5252;
+}
+
+
+/* =========================
+   TASKS CONTAINER
+   ========================= */
+
+.tasks-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+
+    background-color: #1e1e1e;
+    border-radius: 10px;
+}
+
+.tasks-container h1 {
+    color: #ff5252;
+}
+
+.tasks-container form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tasks-container input {
+    padding: 8px 12px;
+
+    background-color: #2a2a2a;
+    color: #ffffff;
+
+    border: 1px solid #555;
+    border-radius: 6px;
+}
+
+.tasks-container button {
+    background-color: #d32f2f;
+    color: #ffffff;
+
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.tasks-container button:hover {
+    background-color: #ff5252;
+    color: #000000;
+}
+
+/* =========================
+   TABLE WRAPPER
+   ========================= */
+
+.task-view-table {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+
+    background-color: #1e1e1e;
+    border-radius: 6px;
+}
+
+/* =========================
+   TABLE
+   ========================= */
+
+.task-view-table table {
+    width: 100%;
+    border-collapse: collapse;
+
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.task-view-table thead {
+    background: linear-gradient(90deg, #000000, #d32f2f);
+}
+
+.task-view-table th,
+.task-view-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.task-view-table tbody tr:hover {
+    background-color: #333333;
+}
+
+/* =========================
+   STATUS BADGES
+   ========================= */
+
+.status {
+    padding: 5px 14px;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status.pending {
+    background-color: #ff5252;
+    color: #000000;
+}
+
+.status.completed {
+    background-color: #2e7d32;
+    color: #ffffff;
+}
+/* =========================
+   TABLE ACTION / TOGGLE BUTTON
+   ========================= */
+
+.task-view-table button {
+    background: linear-gradient(90deg, #000000, #d32f2f);
+    color: #ffffff;
+
+    border: 1px solid #ff5252;
+    padding: 6px 16px;
+    border-radius: 18px;
+
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover state */
+.task-view-table button:hover {
+    background: #ff5252;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* Optional: active/toggled state */
+.task-view-table button.active {
+    background-color: #ff5252;
+    color: #000000;
+    border-color: #ff5252;
+}
